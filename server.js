@@ -1,7 +1,7 @@
 'use strict';
 
 const http = require('http');
-const p = require('./ports');
+const {upper,toupper, PORT} = require('./ports');
 
 const server = http.createServer((req,res)=>{
   if(req.url == '/'){
@@ -10,8 +10,8 @@ const server = http.createServer((req,res)=>{
   res.end(
     `<!doctype html>
     <body>
-    <h1>${p.upper(__dirname)}</h1>
-    <h1>${p.toupper(__dirname)}</h1>
+    <h1>${upper(__dirname)}</h1>
+    <h1>${toupper(__dirname)}</h1>
     <p>what a body =P</p>
     </body>
     `)
@@ -20,4 +20,4 @@ const server = http.createServer((req,res)=>{
   }
 
 })
-server.listen(8080,()=>console.log('Started our server'));
+server.listen(PORT,()=>console.log('Started our server'));

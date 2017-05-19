@@ -11,6 +11,7 @@ const server = http.createServer((req,res)=>{
     `<!doctype html>
     <body>
     <h1>${p.upper(__dirname)}</h1>
+    <h1>${p.toupper(__dirname)}</h1>
     <p>what a body =P</p>
     </body>
     `)

@@ -11,7 +11,7 @@ sock.setEncoding('utf-8');
 const total_data=[];
 sock.on('data', d => total_data.push(d));
 sock.on('end',
-  () => console.log(total_data.reduce((prev, total) => prev + total)));
+  () => data(total_data));
   sock.connect({
   port:80,
   host:'istc.am'

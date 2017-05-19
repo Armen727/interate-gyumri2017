@@ -16,3 +16,16 @@ sock.on('end',
   port:80,
   host:'istc.am'
 })
+
+const data = (data) => {
+  const dataArr = data.reduce((prev, total) =>prev + total).split('\r\n\r\n');
+  const head = dataArr[0].split('\r\n');
+  const headArr = {};
+  for (let i of head){
+    let d = i.split(':');
+    headArr[d[0]] = d[1];
+  }
+  const body = dataArr[1].split('\r\n');
+  console.log(headArr);
+  console.log(body);
+}
